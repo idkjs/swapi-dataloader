@@ -20,9 +20,7 @@
 	},
 
 	"scripts": {
-        "postinstall": "yarn flow-typed install",
-		"codegen": "dataloader-codegen --config swapi.dataloader-config.yaml --output swapi-loaders.js",
-
-		"start": "yarn codegen && node build/swapi-server.js"
+		"build": "dataloader-codegen --config swapi.dataloader-config.yaml --output swapi-loaders.js",
+		"start": "yarn build && node build/swapi-server.js"
 	}
 }
