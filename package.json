@@ -1,8 +1,15 @@
 {
+    "name": "swapi-dataloader",
+    "description": "swapi-dataloader with yelp's dataloader-codegen",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Alain Armand <aarmand.inbox@gmail.com>",
+    "license": "MIT",
     "devDependencies": {
         "@babel/cli": "^7.8.4",
         "@babel/node": "^7.7.0",
         "@babel/preset-flow": "^7.0.0",
+        "dataloader-codegen": "^0.2.3",
         "flow-bin": "0.123.0",
         "flow-typed": "^2.6.2"
     },
@@ -15,6 +22,9 @@
         "node": ">=10"
     },
     "scripts": {
-        "start": ">=10"
+      
+        "codegen": "dataloader-codegen --config swapi.dataloader-config.yaml --output swapi-loaders.js",
+    
+        "start": "yarn codegen && node build/swapi-server.js"
     }
 }
