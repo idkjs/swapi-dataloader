@@ -9,7 +9,7 @@ node_modules: package.json
 
 .PHONY: swapi-loaders.js
 swapi-loaders.js:
-	node ../../lib/index.js --config swapi.dataloader-config.yaml --output swapi-loaders.js
+	yarn dataloader-codegen  --config swapi.dataloader-config.yaml --output swapi-loaders.js
 
 flow-typed: node_modules
 	yarn flow-typed install
